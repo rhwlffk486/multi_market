@@ -1,0 +1,41 @@
+#content ul {
+	width: 1280px;
+	margin: auto;
+	margin-top: 60px;
+}
+
+.MGR_sold_div {
+	width: 1280px;
+	margin: auto;
+	margin-top: 50px;
+}
+
+.MGR_sale_div {
+	margin-left: 55px;
+}
+
+#content ul li {
+    border: 5px solid #eee;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    margin-left: 55px;
+    width: 300px;
+    height: 150px;
+    display: inline-grid;
+}
+
+.orderComplete_h3 {
+	margin-left: 230px;
+}
+
+#orderList>li>div {
+	width: 300px;
+}
+
+#content .orderList span {
+	font-size: 20px;
+	font-weight: bold;
+	display: inline-block;
+	width: 90px;
+	margin-right: 10px;
+}

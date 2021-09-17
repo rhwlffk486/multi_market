@@ -1,0 +1,108 @@
+#uplode_title {
+	text-align: center;
+	width: 1200px;
+	margin: auto;
+}
+
+#uplode_h3 {
+	font-size: 60px;
+	margin-bottom: 40px;
+}
+
+#uplode_form {
+	width: 1000px;
+	margin: auto;
+	text-align: center;
+}
+
+.uplode {
+	text-align: left;
+}
+
+strong {
+	padding-left: 10px;
+}
+
+.uplode_form {
+	margin-bottom: 15px;
+}
+
+.uplode_form.Ucate {
+	width: 120px;
+	display: inline-block;
+}
+
+#foot_size {
+	display: none;
+}
+
+.uplode_form.Uname {
+	width: 483px;
+	display: inline-block;
+	margin-left: 8px;
+}
+
+.uplode_form.Uqty {
+	width: 120px;
+	display: inline-block;
+	margin-left: 8px;
+}
+
+.uplode_form.Uprice {
+	width: 120px;
+	display: inline-block;
+	margin-left: 8px;
+}
+
+#product_name_image {
+	display: inline-block;
+	width: 180px;
+}
+
+.uplode_form.Uimg>div {
+	display: inline-block;
+}
+
+.uplode_form.Ubtn {
+	text-align: center;
+	font-weight: bold;
+}
+
+#upload_btn {
+	margin-right: 10px;
+}
+
+.uplode_form.Ubtn input {
+	border: 1px solid skyblue;
+	background-color: rgba(0, 0, 0, 0);
+	color: skyblue;
+	padding: 5px;
+}
+
+.uplode_form.Ubtn input:hover {
+	color: white;
+	background-color: skyblue; 
+	text-decoration:none;
+}
+
+.Ucate3 {
+	width: 120px;
+	display: none;
+}
+
+.uplode_check {
+	display: none;
+}
+
+.Pcate {
+	width: 134px;
+    padding-left: 10px;
+}
+
+.Pqty {
+	width: 134px;
+}
+
+.Pprice {
+	width: 134px;
+}

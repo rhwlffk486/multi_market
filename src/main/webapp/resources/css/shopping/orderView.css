@@ -1,0 +1,61 @@
+.orderView_div {
+	border: 5px solid #eee;
+	padding: 10px 20px;
+	width: 684px;
+	margin: 20px 0;
+	display: inline-block;
+	border-bottom: 1px solid #999;
+}
+
+.orderView_left {
+	width: 45%;
+	display: contents;
+	float: left;
+}
+
+
+a.product {
+	cursor: pointer;
+}
+
+.orderView_right {
+	display: block;
+	float: right;
+	width: 63%;
+	margin-top: 40px;
+	border-bottom: 1px solid black;
+}
+
+.orderView_right>div {
+	margin-bottom: 10px;
+}
+
+.orderView_right>div>span {
+	font-size: 18px;
+	font-weight: bold;
+	margin-right: 5px;
+}
+
+#sum_cash {
+	float: right;
+    font-size: x-large;
+}
+
+#select_refund_btn {
+    display: block;
+    width: 30%;
+    height: 30px;
+    background-color: #ff0081;
+    border-radius: 4px;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    float: right;
+}
+
+img {
+    max-width: 200px;
+    min-width: 200px;
+    max-height: 200px;
+    min-height: 200px;
+}

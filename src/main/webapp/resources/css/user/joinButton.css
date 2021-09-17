@@ -1,0 +1,63 @@
+#join_main {
+	width: 1280px;
+	margin: auto;
+}
+
+
+.join_container {
+	width: 1280px;
+	height: 500px;
+    margin-top: 100px;
+}
+
+.join_button {
+	width: 1000px;
+    height: 300px;
+    text-align: center;
+    margin-top: 80px;
+    margin-left: 160px;
+    border: 1px solid gold;
+}
+
+.nomal_btn {
+	border-color: transparent;
+    font-weight: 400;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    border-width: 0;
+    border-radius: 4px;
+    color: #fff;
+    transition: all 0.3s cubic-bezier(0.02, 0.01, 0.47, 1);
+    padding: 10px 127px;
+    font-size: 24px;
+    font-family: inherit;
+    display: inline-block;
+    margin-right: 40px;
+    background: #1d89ff;
+}
+
+.nomal_btn:hover, .nomal_btn:focus {
+	opacity: 0.75;
+}
+
+.seller_btn {
+	border-color: transparent;
+    font-weight: 400;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    border-width: 0;
+    border-radius: 4px;
+    color: #fff;
+    transition: all 0.3s cubic-bezier(0.02, 0.01, 0.47, 1);
+    padding: 10px 127px;
+    font-size: 24px;
+    font-family: inherit;
+    display: inline-block;
+    background: #ff5964;;
+}
+
+.seller_btn:hover, .seller_btn:focus {
+	opacity: 0.75;
+}

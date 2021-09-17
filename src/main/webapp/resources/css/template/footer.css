@@ -1,0 +1,33 @@
+.jumbotron {
+	padding: 27px 0 60px 0;
+	text-transform: uppercase;
+	border-top: 1px solid #f0f0f0;
+	background: #fafafa;
+    bottom: -408px;
+    width: 100%;
+}
+
+.wrapper {
+    width: 1280px;
+    margin: 0 auto;
+    text-align: right;
+}
+
+.footerAddress p {
+    color: #999;
+}
+
+#store {
+	margin-right: 10px;
+}
+
+#left {
+	display: inline-block;
+	text-align: left;
+	margin-right: 10px;
+}
+
+#right {
+	display: inline-block;
+	text-align: left;
+}

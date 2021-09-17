@@ -1,0 +1,26 @@
+#main_wrap {
+	width: 100%;
+	height: 600px;
+	margin: auto;
+}
+
+#update_div {
+	width: 1280px;
+	height: 600px;
+	margin: auto;
+}
+
+#main_wrap div table {
+	width:1000px;
+	height: 600px;
+	margin: auto;
+}
+
+#user_update_span {
+	color: red;
+}
+
+.nomal_btn {
+	margin-top: 109px;
+}
+

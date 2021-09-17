@@ -1,0 +1,485 @@
+* {
+	list-style: none;
+	text-decoration: none;
+	border-collapse: collapse;
+	margin: 0px;
+	padding: 0px;
+	font-family: 'Noto Sans KR', sans-serif;;
+}
+
+.wrap {
+	height: 500px;
+}
+
+#header_form {
+	width: 100%;
+    height: 0;
+}
+
+.intro_bg {
+	background-image: url("/resources/images/open11.jpg");
+    width: 100%;
+    height: 288px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: white;
+}
+
+.header {
+	width: 100%;
+	margin: auto;
+	height: 380px;
+}
+
+.head {
+	padding-left: 30px;
+	padding-bottom: 20px;
+}
+
+.header_span {
+	font: large;
+}
+
+.header_li {
+    margin-top: 3px;
+}
+
+.hearder_nav {
+	display: flex;
+	justify-content: flex-end;
+	line-height: 10px;
+	color: white;
+	height: 100px;
+	margin-right: 34px;
+}
+
+.hearder_nav>li>a {
+	color: black;
+	font-size: 14px;
+}
+
+#login_user_id {
+	color:black;
+	margin-left: 20px;
+}
+.li_first {
+	margin-left: 20px;
+}
+
+.li {
+	margin-left: 10px;
+	color: white;
+}
+
+.login {
+	color: black;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.login_txt {
+	width:100px;
+	padding-left: 10px;
+}
+#login_btn {
+	width: 60px;
+	cursor: pointer;
+	border-radius: 5px;
+	border-color: white;
+	background-color:rgba( 255, 255, 255, 0.0 );
+  	color: black;
+}
+
+#search_div {
+	display: inline-block;
+}
+
+#searchArea {
+	height: 40px;
+	border-radius: 5px;
+	margin-top: 45px;
+	text-align: center;
+}
+
+#serachSelect {
+	width: 100px;
+    font-size: 15px;
+    padding: 8px;
+    display: inline-block;
+}
+
+#searchArea>input {
+	border: solid;
+	width: 350px;
+	height: 40px;
+	color: black;
+	padding-left: 10px;
+ 	display: inline-block;
+}
+
+#search_btn {
+	background-color: #FF5A5F;
+	cursor: pointer;
+	color: white;
+	font-size: 15px;
+	font-weight: 700;
+	border-radius: 6px;
+	display: inline-block;
+	padding: 10px 20px;
+	text-decoration: none;
+	box-shadow: 3px 3px 0px 0px rgb(85, 30, 32);
+}
+
+#ID {
+	padding-left: 10px;
+}
+
+#hearder_menu_wrapper {
+    overflow: hidden;
+    max-width: 100%;
+    cursor: pointer;
+    width: 70px;
+}
+
+#hearder_menu_wrapper #hearder_hamburger_menu {
+    position: relative;
+    width: 40px;
+    height: 20px;
+    margin: 15px;
+}
+
+#hearder_menu_wrapper #hearder_hamburger_menu span {
+    opacity: 1;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 2px;
+    border-radius: 10px;
+    color: black;
+    background-color: white;
+    position: absolute;
+    transform: rotate(0deg);
+    transition: .4s ease-in-out;
+}
+
+#hearder_menu_wrapper #hearder_hamburger_menu span:nth-child(1) {
+    top: 0;
+    background: black;
+}
+#hearder_menu_wrapper #hearder_hamburger_menu span:nth-child(2) {
+    top: 9px;
+    background: black;
+}
+#hearder_menu_wrapper #hearder_hamburger_menu span:nth-child(3) {
+    top: 18px;
+    background: black;
+}
+#hearder_menu_wrapper #hearder_hamburger_menu.open span:nth-child(1) {
+    transform: translateY(9px) rotate(135deg);
+}
+#hearder_menu_wrapper #hearder_hamburger_menu.open span:nth-child(2) {
+    opacity: 0;
+    transform: translateX(-60px);
+}
+#hearder_menu_wrapper #hearder_hamburger_menu.open span:nth-child(3) {
+    transform: translateY(-9px) rotate(-135deg);
+}
+
+#header_menu_container .header_menu_list .header_menu_submenu {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.menu-link:hover {
+	text-decoration: underline;
+    color: #FF0000;
+}
+
+.head:hover {
+	text-decoration: underline;
+    color: blue;
+}
+
+	
+#header_menu_container .header_menu_list {
+    padding-left: 0;
+    display: block;
+    position: absolute;
+    width: 100%;
+    max-width: 450px;
+    background: white;
+    box-shadow: rgba(100,100,100,0.2) 6px 2px 10px;
+    z-index: 999;
+    overflow-y: auto;
+    overflow-x: hidden;
+    left: -100%;
+}
+
+#header_menu_container .header_menu_list li.h_accordion-toggle, #header_menu_container .header_menu_list .menu-login {
+    font-size: 16px;
+    padding: 20px;
+    text-transform: uppercase;
+    border-top: 1px solid #dbdcd2;
+}
+#header_menu_container .header_menu_list li:first-of-type {
+    border-top: 0;
+}
+
+.h_accordion-toggle, .h_accordion-content {
+    cursor: pointer;
+    font-size: 16px;
+    position: relative;
+    letter-spacing: 1px;
+}
+
+.h_accordion-content {
+    display: none;
+}
+
+.h_accordion-toggle a:before, .h_accordion-toggle a:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    width: 15px;
+    height: 2px;
+    margin-top: -1px;
+    background-color: #5a5858;
+    transform-origin: 50% 50%;
+    transition: all 0.3s ease-out;
+}
+
+.h_accordion-toggle a:before {
+    transform: rotate(-90deg);
+    opacity: 1;
+    z-index: 2;
+}
+
+.h_accordion-toggle.active-tab {
+  background: yellowgreen;
+  transition: all 0.3s ease;
+}
+.h_accordion-toggle a.active:before {
+    transform: rotate(0deg);
+    background: #fff !important;
+}
+
+.h_accordion-toggle a.active:after {
+    transform: rotate(180deg);
+    background: #fff !important;
+    opacity: 0;
+}
+
+.main_img {
+	margin-bottom: 12px;
+	width: 220px;
+	height: 65px;
+}
+
+.sub_tit_txt {
+	font-size: 60px;
+	text-align: center;
+}
+
+.exTxt {
+	display: flex;
+	justify-content: flex-end;
+}
+
+#main {
+	width: 1280px;
+	height: 800px;
+	margin: auto
+}
+
+.container {
+	width: 100%;
+	margin: auto;
+	margin-top: 100px;
+}
+
+.join_form {
+	margin: auto;
+	width: 800px;
+}
+
+.join_form table {
+	border-spacing: 0;
+	padding: 0;
+	border: 0;
+	width: 1000px;
+	margin-left: 100px;
+}
+
+.join_form table input {
+	border: 1px solid #ececec;
+	font-size: 14px;
+	color: #4c4c4c;
+	height: 35px;
+	padding: 10px;
+	width: 100%;
+	float: left;
+}
+
+.join_form table input.send_number {
+	width: 383px;
+}
+
+.join_form table th span {
+	color: #404040;
+	font-size: 14px;
+	display: inline-block;
+	position: relative;
+	padding: 0px 10px 0px 0px;
+	text-indent: 20px;
+}
+
+.join_form table th {
+	text-align: left;
+    width: 175px;
+}
+
+.join_form table td {
+	padding: 6px 0px 6px 0px;
+	position: relative;
+	width: 222px;
+	
+}
+
+.join_form table td input {
+	width: 180px;
+}
+
+.join_form table th span:after {
+	content: '*';
+	font-size: 13px;
+	color: #f95427;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+}
+
+.join_form.idpwFind table th span:after {
+	content: none;
+}
+
+#txt span:before {
+	content: '*';
+	color: #f95427;
+}
+
+#closed_day {
+	width: 90px;
+	margin-left: 110px;
+}
+
+#txt {
+	text-align: center;
+	margin: 60px;
+}
+
+#userAddress1 {
+	text-align: center;
+	width: 110px;
+}
+
+#Addr_btn {
+	margin-left: 10px;
+	width: 80px;
+	box-shadow: 3px 4px 0px 0px #899599;
+	background: linear-gradient(to bottom, #ededed 5%, #bab1ba 100%);
+	background-color: #ededed;
+	border-radius: 15px;
+	border: 1px solid #d6bcd6;
+	display: inline-block;
+	cursor: pointer;
+	color: #3a8a9e;
+	font-family: Arial;
+	font-size: 13px;
+	padding: 1px;
+	text-decoration: none;
+	text-shadow: 0px 1px 0px #e1e2ed;
+}
+
+#Addr_btn:hover {
+	background: linear-gradient(to bottom, #bab1ba 5%, #ededed 100%);
+	background-color: #bab1ba;
+}
+
+#Addr_btn:active {
+	position: relative;
+	top: 1px;
+}
+
+#email {
+	width: 200px;
+}
+
+#userAddress2 {
+	width: 200px;
+	margin-right: 20px;
+	text-align: center;
+}
+
+#userAddress3 {
+	width: 280px;
+	text-align: center;
+}
+
+#select {
+	margin-left:100px;
+}
+
+#BKname {
+	width:100px;
+	text-align: center;
+}
+.exform_txt {
+	text-align: center;
+}
+
+.exform_txt:before {
+	content: '*';
+	font-size: 13px;
+	color: #f95427;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+}
+
+.btn_wrap {
+	display: inline-block;
+	padding: 6px 12px;
+    text-align: center;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+#back_btn {
+    font-size: 16px;
+    width: 84px;
+}
+
+.btn_wrap:active {
+	transform: translateY(3px);
+}
+
+.btn_wrap {
+    color: #fff;
+    background-color: #428bca;
+    border-color: #357ebd;
+}
+
+.btn_wrap:active {
+	border-bottom: 2px solid #165195;
+}
+
+#btn_wrap_div {
+	text-align: center;
+}
+
+input[type="text"], input[type="password"] {
+    box-sizing: border-box;
+}
