@@ -34,7 +34,6 @@ $(function(){
 			day : day
 		}
 		, success: function(result){
-					console.log(result);
 			var html1 = "";
 			var html2 = "";
 			if (result.length > 0) {

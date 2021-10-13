@@ -23,7 +23,7 @@
 			<div class="join_button">
 			<br><br><br><br><br>
 				<a href="/user/nomalJoin" class="nomal_btn">일반 회원가입</a>
-				<a href="/user/sellerJoin" class="seller_btn">판매자 회원가입</a>
+				<a href="/user/sellerJoin" class="seller_btn">기업 회원가입</a>
 			</div>
 		</div>
 	</main>

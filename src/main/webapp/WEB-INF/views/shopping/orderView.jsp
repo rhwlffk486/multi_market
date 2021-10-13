@@ -62,7 +62,6 @@ $(function(){
 			});
 		}
 	});
-
 });
 </script>
 <body>

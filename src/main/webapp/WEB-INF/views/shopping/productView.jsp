@@ -278,11 +278,6 @@ $(document).on("click", ".modify", function(){
 					
 				</ol>
 			</section>
-			<%-- <c:if test="${reply.size() >= 9 }">
-				<div id="addBtn_div">
-					<button id="addBtn" onclick="moreList();">더보기</button>
-				</div>
-			</c:if> --%>
 					<script type="text/javascript">
 						function moreList() {
 							var productNum = ${viewVO.productNum};

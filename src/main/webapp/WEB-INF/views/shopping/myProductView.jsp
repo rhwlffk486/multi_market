@@ -129,10 +129,7 @@ $(document).on("change", "#category2", function(){
 			// 글자 크기 설정
 			[ 'fontsize', [ 'fontsize' ] ],
 			// 굵기, 기울임꼴, 밑줄,취소 선, 서식지우기
-			[
-					'style',
-					[ 'bold', 'italic', 'underline', 'strikethrough',
-							'clear' ] ],
+			['style', [ 'bold', 'italic', 'underline', 'strikethrough', 'clear' ] ],
 			// 글자색
 			[ 'color', [ 'forecolor', 'color' ] ],
 			// 표만들기
@@ -289,8 +286,6 @@ function formOnclick() {
 		return false;
 	}
 };
-
-
 </script>
 
 </head>

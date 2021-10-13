@@ -22,12 +22,12 @@ public class ProductService {
 	@Autowired
 	private ProductDAO dao;
 	
-	//　選択した製品リストを持ってくる
+	//　選択した商品リストを持ってくる
 	public ArrayList<ProductVO> productShow(HashMap<String, Object> hash) {
 		return dao.productShow(hash);
 	}
 	
-	//　製品の合計がいくつか数える
+	//　商品の合計がいくつか数える
 	public int productCount(String cateCode, String cateCodeRef) {
 		return dao.productCount(cateCode, cateCodeRef);
 	}
@@ -42,7 +42,7 @@ public class ProductService {
 		return dao.searchCount(hash);
 	}
 	
-	// 商品の詳細情報　＆　修正する製品
+	// 商品の詳細情報　＆　修正する商品
 	public ProductVO productView(int productNum) {
 		return dao.productView(productNum);
 	}
@@ -77,14 +77,24 @@ public class ProductService {
 		return dao.myProduct(hash);
 	}
 	
-	//　注文された製品リスト
+	//　注文された商品リスト
 	public List<OrderVO> orderComesList(String userID) {
 		return dao.orderComesList(userID);
 	}
 	
-	//　製品登録するときのカテゴリー
+	//　商品登録するときのカテゴリー
 	public ArrayList<CategoryVO> category() {
 		return dao.category();
+	}
+	
+	//　商品登録するときのカテゴリー
+	public ArrayList<CategoryVO> category1() {
+		return dao.category1();
+	}
+	
+	//　商品登録するときのカテゴリー
+	public ArrayList<CategoryVO> category2() {
+		return dao.category2();
 	}
 	
 	//　商品登録
@@ -102,16 +112,12 @@ public class ProductService {
 		return dao.productShowThum(productNum);
 	}
 	
-	// 製品修正
+	// 商品修正
 	public boolean productModify(ProductVO productVO) {
 		return dao.productModify(productVO);
 	}
-	
-	public boolean productImgModify(ThumbnailVO thumVO) {
-		return dao.productImgModify(thumVO);
-	}
 
-	//　製品削除
+	//　商品削除
 	public boolean productDelete(int productNum) {
 		int result = dao.productDelete(productNum);
 		
@@ -126,7 +132,7 @@ public class ProductService {
 		return dao.cartList(userID);
 	}
 	
-	//　カートの製品削除
+	//　カートの商品削除
 	public int deleteCart(CartListVO cart) {
 		return dao.deleteCart(cart);
 	}
@@ -141,32 +147,32 @@ public class ProductService {
 		return dao.orderDetailsInfo(orderDetail);
 	}
 
-	//　すべてのカートリストの製品削除
+	//　すべてのカートリストの商品削除
 	public void cartAllDelete(String userID) {
 		dao.cartAllDelete(userID);
 	}
 
-	//　注文した製品
+	//　注文した商品
 	public List<OrderVO> orderList(String userID) {
 		return dao.orderList(userID);
 	}
 	
-	//　返品した製品
+	//　返品した商品
 	public List<OrderVO> refundOrderList(HashMap<String, String> hash) {
 		return dao.refundOrderList(hash);
 	}
 
-	//　注文した製品の詳しい内容のリスト
+	//　注文した商品の詳しい内容のリスト
 	public List<OrderVO> orderView(HashMap<String, Object> hash) {
 		return dao.orderView(hash);
 	}
 
-	//　注文リストからチェックした製品の返品要請
+	//　注文リストからチェックした商品の返品要請
 	public int refundPlz(HashMap<String, Object> hash) {
 		return dao.refundPlz(hash);
 	}
 	
-	//　販売者：明細書の配送の状態に合わせて製品を持ってくる
+	//　販売者：明細書の配送の状態に合わせて商品を持ってくる
 	public List<OrderVO> orderDelivery(HashMap<String, Object> hash) {
 		return dao.orderDelivery(hash);
 	}
@@ -176,7 +182,7 @@ public class ProductService {
 		 dao.deliveryInfo(hash);
 	}
 	
-	//　配送が完了すると注文が入った数分だけ製品から抜く
+	//　配送が完了すると注文が入った数分だけ商品から抜く
 	public void productDown(ProductVO productVO) {
 		dao.productDown(productVO);
 	}
@@ -186,7 +192,7 @@ public class ProductService {
 		return dao.refund(hash);
 	}
 
-	//　当日入った製品をホームページに表示するメソッド
+	//　当日入った商品をホームページに表示するメソッド
 	public List<ProductVO> todayProduct(String date) {
 		return dao.todayProduct(date);
 	}

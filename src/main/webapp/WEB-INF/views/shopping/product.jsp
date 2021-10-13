@@ -61,11 +61,9 @@ $(function(){
 				</c:forEach>
 			</div>
 		</div>
-				
 				<c:if test="${empty product }">
 					<div>등록된 상품이 없습니다.</div>
 				</c:if>
-
 		<div id="page_div">
 			<ul>
 				<c:if test="${pageMaker.prev}">

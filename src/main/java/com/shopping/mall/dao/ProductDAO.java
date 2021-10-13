@@ -22,14 +22,14 @@ public class ProductDAO {
 	@Autowired
 	private SqlSession session;
 	
-	//　選択した製品を持ってくる
+	//　選択した商品を持ってくる
 	public ArrayList<ProductVO> productShow(HashMap<String, Object> hash) {
 		ArrayList<ProductVO> result = null;
 
 		if (hash.get("cateCodeRef") != "") {
 				try {
 					ProductMapper mapper = session.getMapper(ProductMapper.class);
-					result = mapper.productPshow(hash);// 選択した上位製品のリスト
+					result = mapper.productPshow(hash);// 選択した上位商品のリスト
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -39,7 +39,7 @@ public class ProductDAO {
 		} else {
 			try {
 				ProductMapper mapper = session.getMapper(ProductMapper.class);
-				result = mapper.productCshow(hash);//　選択した下位製品のリスト
+				result = mapper.productCshow(hash);//　選択した下位商品のリスト
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -47,14 +47,14 @@ public class ProductDAO {
 		}
 	}
 	
-	//　製品の合計がいくつか数えるメソッド
+	//　商品の合計がいくつか数えるメソッド
 	public int productCount(String cateCode, String cateCodeRef) {
 		int result = 0;
 
 		if (cateCodeRef != "") {
 			try {
 				ProductMapper mapper = session.getMapper(ProductMapper.class);
-				result = mapper.productPcount(cateCodeRef);//　選択した上位製品の数
+				result = mapper.productPcount(cateCodeRef);//　選択した上位商品の数
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -62,7 +62,7 @@ public class ProductDAO {
 		} else {
 			try {
 				ProductMapper mapper = session.getMapper(ProductMapper.class);
-				result = mapper.productCcount(cateCode);//　選択した下位製品の数
+				result = mapper.productCcount(cateCode);//　選択した下位商品の数
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -96,7 +96,7 @@ public class ProductDAO {
 		return count;
 	}
 
-	//　商品の詳細情報　＆　修正する製品
+	//　商品の詳細情報　＆　修正する商品
 	public ProductVO productView(int productNum) {
 		ProductVO vo = null;
 
@@ -194,7 +194,7 @@ public class ProductDAO {
 		return result;
 	}
 	
-	//　注文された製品のリスト
+	//　注文された商品のリスト
 	public List<OrderVO> orderComesList(String userID) {
 		
 		List<OrderVO> OrderComesList = null;
@@ -207,13 +207,39 @@ public class ProductDAO {
 		return OrderComesList;
 	}
 	
-	//　製品登録するときのカテゴリー
+	//　商品登録するときのカテゴリー
 	public ArrayList<CategoryVO> category() {
 		ArrayList<CategoryVO> result = null;
 
 		try {
 			ProductMapper mapper = session.getMapper(ProductMapper.class);
 			result = mapper.category();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return result;
+	}
+	
+	//　商品登録するときのカテゴリー
+	public ArrayList<CategoryVO> category1() {
+		ArrayList<CategoryVO> result = null;
+
+		try {
+			ProductMapper mapper = session.getMapper(ProductMapper.class);
+			result = mapper.category1();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return result;
+	}
+	
+	//　商品登録するときのカテゴリー
+	public ArrayList<CategoryVO> category2() {
+		ArrayList<CategoryVO> result = null;
+
+		try {
+			ProductMapper mapper = session.getMapper(ProductMapper.class);
+			result = mapper.category2();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -252,7 +278,7 @@ public class ProductDAO {
 		return false;
 	}
 	
-	//　製品修正
+	//　商品修正
 	public boolean productModify(ProductVO productVO) {
 		int result = 0;
 
@@ -280,7 +306,7 @@ public class ProductDAO {
 		return result;
 	}
 	
-	//　製品削除
+	//　商品削除
 	public int productDelete(int productNum) {
 		int result = 0;
 		
@@ -322,7 +348,7 @@ public class ProductDAO {
 		return false;
 	}
 	
-	//　カートの製品削除
+	//　カートの商品削除
 	public int deleteCart(CartListVO cart) {
 		int result = 0;
 
@@ -368,7 +394,7 @@ public class ProductDAO {
 		return false;
 	}
 
-	//　すべてのカートリストの製品削除
+	//　すべてのカートリストの商品削除
 	public void cartAllDelete(String userID) {
 		try {
 			ProductMapper mapper = session.getMapper(ProductMapper.class);
@@ -378,7 +404,7 @@ public class ProductDAO {
 		}
 	}
 
-	//　注文した製品
+	//　注文した商品
 	public List<OrderVO> orderList(String userID) {
 		List<OrderVO> oderList = null;
 
@@ -391,7 +417,7 @@ public class ProductDAO {
 		return oderList;
 	}
 	
-	//　返品した製品
+	//　返品した商品
 	public List<OrderVO> refundOrderList(HashMap<String, String> hash) {
 		List<OrderVO> list = null;
 		try {
@@ -403,7 +429,7 @@ public class ProductDAO {
 		return list;
 	}
 
-	//　注文した製品の詳しい内容のリスト
+	//　注文した商品の詳しい内容のリスト
 	public List<OrderVO> orderView(HashMap<String, Object> hash) {
 		List<OrderVO> orderView = null;
 		try {
@@ -415,7 +441,7 @@ public class ProductDAO {
 		return orderView;
 	}
 	
-	//　orderViewからチェックした製品の返品要請	
+	//　orderViewからチェックした商品の返品要請	
 	public int refundPlz(HashMap<String, Object> hash) {
 		int result = 0;
 
@@ -431,7 +457,7 @@ public class ProductDAO {
 		return result;
 	}
 
-	//　販売者：明細書の配送の状態に合わせて製品を持ってくる
+	//　販売者：明細書の配送の状態に合わせて商品を持ってくる
 	public List<OrderVO> orderDelivery(HashMap<String, Object> hash) {
 		List<OrderVO> OrderComesList = null;
 		try {
@@ -454,7 +480,7 @@ public class ProductDAO {
 		}
 	}
 	
-	// 配送が完了すると注文が入った数分だけ製品から抜く
+	// 配送が完了すると注文が入った数分だけ商品から抜く
 	public void productDown(ProductVO productVO) {
 		try {
 			ProductMapper mapper = session.getMapper(ProductMapper.class);
@@ -481,7 +507,7 @@ public class ProductDAO {
 		return result;
 	}
 
-	//　当日入った製品をホームページに表示するメソッド
+	//　当日入った商品をホームページに表示するメソッド
 	public List<ProductVO> todayProduct(String date) {
 		List<ProductVO> list = null;
 		List<ProductVO> list2 = null;
@@ -489,7 +515,7 @@ public class ProductDAO {
 		
 		try {
 			ProductMapper mapper = session.getMapper(ProductMapper.class);
-			list = mapper.todayProduct(date);//　当日入った一般製品をホームページに表示するメソッド
+			list = mapper.todayProduct(date);//　当日入った一般商品をホームページに表示するメソッド
 			list2 = mapper.todayUsedProduct(date);//　当日入った中古品をホームページに表示するメソッド
 			listJoin.addAll(list);
 			listJoin.addAll(list2);

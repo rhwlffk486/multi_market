@@ -3,6 +3,8 @@ package com.shopping.mall.controller;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 import org.apache.commons.lang.RandomStringUtils;
 import org.apache.commons.mail.HtmlEmail;
@@ -12,14 +14,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.shopping.mall.service.ProductService;
 import com.shopping.mall.service.UserService;
+import com.shopping.mall.vo.CategoryVO;
 import com.shopping.mall.vo.nomalUserVO;
 import com.shopping.mall.vo.sellerUserVO;
+
+import net.sf.json.JSONArray;
 
 
 
@@ -43,14 +49,26 @@ public class UserController {
 		return "home";	
 	}
 
-	/*
-	 * // カテゴリーの情報
-	 * 
-	 * @ModelAttribute("category") public Model category(Model model) {
-	 * List<CategoryVO> category = null; category = Pservice.category();
-	 * 
-	 * return model.addAttribute("category", JSONArray.fromObject(category)); }
-	 */
+	
+	// カテゴリーのメソッド
+	@ModelAttribute("category")
+	public Model category(Model model) {
+		logger.info("category메소드 실행");
+		List<CategoryVO> category1 = null;
+		List<CategoryVO> category2 = null;
+		
+		category1 = Pservice.category1();
+		category2 = Pservice.category2();
+		
+		System.out.println("category1" + category1);
+		System.out.println("category2" + category2);
+		
+		model.addAttribute("category1", category1);
+		model.addAttribute("category2", category2);
+		
+		return model;
+	}
+	 
 	
 	// 会員登録ページに移動
 	@RequestMapping(value="join", method=RequestMethod.GET)
@@ -89,7 +107,10 @@ public class UserController {
 	
 	// 加入
 	@RequestMapping(value="join", method=RequestMethod.POST)
-	public String Join(RedirectAttributes redirect, String role, String userName, String userID, String userPW, String phone, String userAddress1, String userAddress2, String userAddress3, String email, String businessNumber, String BKname, String account) {
+	public String Join(RedirectAttributes redirect, String role, 
+			String userName, String userID, String userPW, String phone, 
+			String userAddress1, String userAddress2, String userAddress3, 
+			String email, String businessNumber, String BKname, String account) {
 		logger.info("Join 메소드 실행");
 		String pw = pwdEncoder.encode(userPW);
 		sellerUserVO sellerUser = new sellerUserVO();
@@ -164,7 +185,10 @@ public class UserController {
 	
 	// 会員の情報変更
 	@RequestMapping(value="update", method=RequestMethod.POST)
-	public String update(HttpSession session, RedirectAttributes redirect, String role, String userPW, String phone, String userAddress1, String userAddress2, String userAddress3, String email, String businessNumber, String BKname, String account) {
+	public String update(HttpSession session, RedirectAttributes redirect, 
+		   String role, String userPW, String phone, String userAddress1, 
+		   String userAddress2, String userAddress3, String email, 
+		   String businessNumber, String BKname, String account) {
 		logger.info("udate 메소드 실행");
 		sellerUserVO upUser = new sellerUserVO();
 		String userID = (String) session.getAttribute("userID");
@@ -262,10 +286,9 @@ public class UserController {
 		
 		String result = service.findUserPW(hash);// PW検索
 		System.out.println(result);
-		// equals는 값을 비교하기 때문에 result가아닌 userID, 즉 값이 들어있는 변수로 비교해야 한다. result가 null일 경우 오류가 나기때문이다.
+		
 		if (userID.equals(result)) {
 			String temporaryPW = RandomStringUtils.randomAlphanumeric(10);// 臨時暗証番号
-			System.out.println("비밀번호찾기이거실행해?");
 			String newPW = pwdEncoder.encode(temporaryPW);
 			hash.put("newPW", newPW);
 			hash.put("temporaryPW", temporaryPW); 
@@ -273,7 +296,6 @@ public class UserController {
 			service.newPW(hash);//　臨時暗証番号で変更
 			sendEmail(null, hash, "findpw");//　臨時暗証番号を会員のメールに送る
 		} else {
-			System.out.println("틀리면 실행");
 			redirect.addFlashAttribute("msg", 3);
 		
 			return "redirect:/user/findUserInfo";

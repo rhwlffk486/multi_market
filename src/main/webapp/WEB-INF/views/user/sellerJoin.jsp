@@ -287,7 +287,7 @@ var userAddress1 = false;
 		<div class="container">
 			<div class="form_txtInput">
 				<h2 class="sub_tit_txt">회원가입</h2>
-				<p class="exTxt">판매자 회원 페이지 입니다.</p>
+				<p class="exTxt">기업 회원 페이지 입니다.</p>
 
 				<form id="signFrm" name="signFrm" action="/user/join" method="POST">
 					<div class="join_form">

@@ -48,24 +48,12 @@ $(function() {
 					.removeClass("active-tab").find(".menu-link")
 					.removeClass("active");
 	});
-	/* var jsonData = JSON.parse('${category}'); */
 	
-/* 	for (var i=0; i<jsonData.length; i++) {
-		if (jsonData[i].cateCode == 100*(i+1)) {
-			console.log("hi");
-			for (var j=0; j<jsonData.length; j++) {
-				if (jsonData[j].cateCodeRef == 100*(i+1))
-				console.log("hello");
-			}
-		}
-	} */
 }); // jQuery load
 </script>
 </head>
 <body>
-
-	<div class="wrap">
-		<!-- <div class="intro_bg"> -->
+		<div class="wrap">${category3 }
 			<div id="header_menu_container">
 				<div id="hearder_menu_wrapper">
 					<div id="hearder_hamburger_menu">
@@ -73,154 +61,18 @@ $(function() {
 					</div>
 				</div>
 			<ul class="header_menu_list accordion">
-				<li class="h_toggle h_accordion-toggle">
-				<a href="/shopping/product?name=100&orderBy=desc" class="menu-link">패션 의류</a></li>
-				<ul class="header_menu_submenu h_accordion-content">
-					<li><a class="head" href="/shopping/product?name=101&orderBy=desc">신발</a></li>
-					<li><a class="head" href="/shopping/product?name=102&orderBy=desc">구두</a></li>
-					<li><a class="head" href="/shopping/product?name=103&orderBy=desc">바지</a></li>
-					<li><a class="head" href="/shopping/product?name=104&orderBy=desc">치마</a></li>
-					<li><a class="head" href="/shopping/product?name=105&orderBy=desc">셔츠</a></li>
-					<li><a class="head" href="/shopping/product?name=106&orderBy=desc">티셔츠</a></li>
-					<li><a class="head" href="/shopping/product?name=107&orderBy=desc">아웃도어</a></li>
-					<li><a class="head" href="/shopping/product?name=108&orderBy=desc">모자</a></li>
-					<li><a class="head" href="/shopping/product?name=109&orderBy=desc">기타</a></li>
-				</ul>
-				<li class="h_toggle h_accordion-toggle">
-				<a href="/shopping/product?name=200&orderBy=desc" class="menu-link">뷰티</a></li>
-				<ul class="header_menu_submenu h_accordion-content">
-					<li><a class="head" href="/shopping/product?name=201&orderBy=desc">메이크업</a></li>
-					<li><a class="head" href="/shopping/product?name=202&orderBy=desc">향수</a></li>
-					<li><a class="head" href="/shopping/product?name=203&orderBy=desc">헤어</a></li>
-					<li><a class="head" href="/shopping/product?name=204&orderBy=desc">네일</a></li>
-					<li><a class="head" href="/shopping/product?name=205&orderBy=desc">기타</a></li>
-				</ul>
-				<li class="h_toggle h_accordion-toggle">
-				<a href="/shopping/product?name=300&orderBy=desc" class="menu-link">식품</a></li>
-				<ul class="header_menu_submenu h_accordion-content">
-					<li><a class="head" href="/shopping/product?name=301&orderBy=desc">고기</a></li>
-					<li><a class="head" href="/shopping/product?name=302&orderBy=desc">과일</a></li>
-					<li><a class="head" href="/shopping/product?name=303&orderBy=desc">채소</a></li>
-					<li><a class="head" href="/shopping/product?name=304&orderBy=desc">수산물</a></li>
-					<li><a class="head" href="/shopping/product?name=305&orderBy=desc">음료</a></li>
-					<li><a class="head" href="/shopping/product?name=306&orderBy=desc">인스턴트</a></li>
-					<li><a class="head" href="/shopping/product?name=307&orderBy=desc">쌀</a></li>
-					<li><a class="head" href="/shopping/product?name=308&orderBy=desc">기타</a></li>
-				</ul>
-				<li class="h_toggle h_accordion-toggle">
-				<a href="/shopping/product?name=400&orderBy=desc" class="menu-link">주방용품</a></li>
-				<ul class="header_menu_submenu h_accordion-content">
-					<li><a class="head" href="/shopping/product?name=401&orderBy=desc">주방가전</a></li>
-					<li><a class="head" href="/shopping/product?name=402&orderBy=desc">주방기구</a></li>
-					<li><a class="head" href="/shopping/product?name=403&orderBy=desc">일회용품</a></li>
-				</ul>
-				<li class="h_toggle h_accordion-toggle">
-				<a href="/shopping/product?name=500&orderBy=desc" class="menu-link">생활용품</a></li>
-				<ul class="header_menu_submenu h_accordion-content">
-					<li><a class="head" href="/shopping/product?name=501&orderBy=desc">세면물품</a></li>
-					<li><a class="head" href="/shopping/product?name=502&orderBy=desc">집용품</a></li>
-					<li><a class="head" href="/shopping/product?name=503&orderBy=desc">세탁용품</a></li>
-					<li><a class="head" href="/shopping/product?name=504&orderBy=desc">욕실용품</a></li>
-					<li><a class="head" href="/shopping/product?name=505&orderBy=desc">주방물품</a></li>
-					<li><a class="head" href="/shopping/product?name=506&orderBy=desc">기타</a></li>
-				</ul>
-				<li class="h_toggle h_accordion-toggle">
-				<a href="/shopping/product?name=600&orderBy=desc" class="menu-link">가전용품</a></li>
-				<ul class="header_menu_submenu h_accordion-content">
-					<li><a class="head" href="/shopping/product?name=601&orderBy=desc">침구</a></li>
-					<li><a class="head" href="/shopping/product?name=602&orderBy=desc">가구</a></li>
-					<li><a class="head" href="/shopping/product?name=603&orderBy=desc">수납</a></li>
-					<li><a class="head" href="/shopping/product?name=604&orderBy=desc">욕실용품</a></li>
-					<li><a class="head" href="/shopping/product?name=605&orderBy=desc">기타</a></li>
-				</ul>
-				<li class="h_toggle h_accordion-toggle">
-				<a href="/shopping/product?name=700&orderBy=desc" class="menu-link">인테리어</a></li>
-				<ul class="header_menu_submenu h_accordion-content">
-					<li><a class="head" href="/shopping/product?name=701&orderBy=desc">TV</a></li>
-					<li><a class="head" href="/shopping/product?name=702&orderBy=desc">냉장고</a></li>
-					<li><a class="head" href="/shopping/product?name=703&orderBy=desc">컴퓨터</a></li>
-					<li><a class="head" href="/shopping/product?name=704&orderBy=desc">세탁기</a></li>
-					<li><a class="head" href="/shopping/product?name=705&orderBy=desc">청소기</a></li>
-					<li><a class="head" href="/shopping/product?name=706&orderBy=desc">기타</a></li>
-				</ul>
-				<li class="h_toggle h_accordion-toggle">
-				<a href="/shopping/product?name=800&orderBy=desc" class="menu-link">스포츠</a></li>
-				<ul class="header_menu_submenu h_accordion-content">
-					<li><a class="head" href="/shopping/product?name=801&orderBy=desc">홈트레이닝</a></li>
-					<li><a class="head" href="/shopping/product?name=802&orderBy=desc">수영</a></li>
-					<li><a class="head" href="/shopping/product?name=803&orderBy=desc">골프</a></li>
-					<li><a class="head" href="/shopping/product?name=804&orderBy=desc">자전거</a></li>
-					<li><a class="head" href="/shopping/product?name=805&orderBy=desc">킥보드</a></li>
-					<li><a class="head" href="/shopping/product?name=806&orderBy=desc">낚시</a></li>
-					<li><a class="head" href="/shopping/product?name=807&orderBy=desc">등산</a></li>
-					<li><a class="head" href="/shopping/product?name=808&orderBy=desc">기타</a></li>
-				</ul>
-				<li class="h_toggle h_accordion-toggle">
-				<a href="/shopping/product?name=900&orderBy=desc" class="menu-link">자동차용품</a></li>
-				<ul class="header_menu_submenu h_accordion-content">
-					<li><a class="head" href="/shopping/product?name=901&orderBy=desc">인테리어</a></li>
-					<li><a class="head" href="/shopping/product?name=902&orderBy=desc">세차</a></li>
-					<li><a class="head" href="/shopping/product?name=903&orderBy=desc">차량부품</a></li>
-					<li><a class="head" href="/shopping/product?name=904&orderBy=desc">오토바이</a></li>
-					<li><a class="head" href="/shopping/product?name=905&orderBy=desc">기타</a></li>
-				</ul>
-				<li class="h_toggle h_accordion-toggle">
-				<a href="/shopping/product?name=1000&orderBy=desc" class="menu-link">도서/음반</a></li>
-				<ul class="header_menu_submenu h_accordion-content">
-					<li><a class="head" href="/shopping/product?name=1001&orderBy=desc">유아</a></li>
-					<li><a class="head" href="/shopping/product?name=1002&orderBy=desc">소설</a></li>
-					<li><a class="head" href="/shopping/product?name=1003&orderBy=desc">초중참고서</a></li>
-					<li><a class="head" href="/shopping/product?name=1004&orderBy=desc">외국어</a></li>
-					<li><a class="head" href="/shopping/product?name=1005&orderBy=desc">대학교제</a></li>
-					<li><a class="head" href="/shopping/product?name=1006&orderBy=desc">만화</a></li>
-					<li><a class="head" href="/shopping/product?name=1007&orderBy=desc">기타</a></li>
-				</ul>
-				<li class="h_toggle h_accordion-toggle">
-				<a href="/shopping/product?name=1100&orderBy=desc" class="menu-link">완구/문구</a></li>
-				<ul class="header_menu_submenu h_accordion-content">
-					<li><a class="head" href="/shopping/product?name=1101&orderBy=desc">케릭터완구</a></li>
-					<li><a class="head" href="/shopping/product?name=1102&orderBy=desc">영아완구</a></li>
-					<li><a class="head" href="/shopping/product?name=1103&orderBy=desc">로봇</a></li>
-					<li><a class="head" href="/shopping/product?name=1104&orderBy=desc">블록</a></li>
-					<li><a class="head" href="/shopping/product?name=1105&orderBy=desc">물놀이</a></li>
-					<li><a class="head" href="/shopping/product?name=1106&orderBy=desc">야외완구</a></li>
-					<li><a class="head" href="/shopping/product?name=1107&orderBy=desc">실내완구</a></li>
-					<li><a class="head" href="/shopping/product?name=1108&orderBy=desc">보드</a></li>
-					<li><a class="head" href="/shopping/product?name=1109&orderBy=desc">조립</a></li>
-					<li><a class="head" href="/shopping/product?name=1110&orderBy=desc">기타</a></li>
-				</ul>
-				<li class="h_toggle h_accordion-toggle">
-				<a href="/shopping/product?name=1200&orderBy=desc" class="menu-link">반려동물용품</a></li>
-				<ul class="header_menu_submenu h_accordion-content">
-					<li><a class="head" href="/shopping/product?name=1201&orderBy=desc">사무용품</a></li>
-					<li><a class="head" href="/shopping/product?name=1202&orderBy=desc">학용품</a></li>
-					<li><a class="head" href="/shopping/product?name=1203&orderBy=desc">엽서</a></li>
-					<li><a class="head" href="/shopping/product?name=1204&orderBy=desc">필기류</a></li>
-					<li><a class="head" href="/shopping/product?name=1205&orderBy=desc">기타</a></li>
-				</ul>
-				<li class="h_toggle h_accordion-toggle">
-				<a href="/shopping/product?name=1300&orderBy=desc" class="menu-link">반려동물용품</a></li>
-				<ul class="header_menu_submenu h_accordion-content">
-					<li><a class="head" href="/shopping/product?name=1301&orderBy=desc">강아지물품</a></li>
-					<li><a class="head" href="/shopping/product?name=1302&orderBy=desc">고양이물품</a></li>
-					<li><a class="head" href="/shopping/product?name=1303&orderBy=desc">관상어물품</a></li>
-					<li><a class="head" href="/shopping/product?name=1304&orderBy=desc">가축물품</a></li>
-					<li><a class="head" href="/shopping/product?name=1305&orderBy=desc">기타</a></li>
-				</ul>
-				<li class="h_toggle h_accordion-toggle">
-				<a href="/shopping/product?name=1400&orderBy=desc" class="menu-link">기타</a></li>
-				<ul class="header_menu_submenu h_accordion-content">
-					<li><a class="head" href="/shopping/product?name=1401&orderBy=desc">건강기능식품</a></li>
-					<li><a class="head" href="/shopping/product?name=1402&orderBy=desc">여성용건강식품</a></li>
-					<li><a class="head" href="/shopping/product?name=1403&orderBy=desc">남성용건강식품</a></li>
-					<li><a class="head" href="/shopping/product?name=1404&orderBy=desc">임산부건강식품</a></li>
-					<li><a class="head" href="/shopping/product?name=1405&orderBy=desc">헬스</a></li>
-					<li><a class="head" href="/shopping/product?name=1406&orderBy=desc">영양제</a></li>
-					<li><a class="head" href="/shopping/product?name=1407&orderBy=desc">다이어트</a></li>
-					<li><a class="head" href="/shopping/product?name=1408&orderBy=desc">기타</a></li>
-				</ul>
+				<c:forEach items="${category1 }" var="item1">
+					<li class="h_toggle h_accordion-toggle">
+					<a href="/shopping/product?name=${item1.cateCode }&orderBy=desc" class="menu-link">${item1.cateName }</a></li>
+					<ul class="header_menu_submenu h_accordion-content">
+						<c:forEach items="${category2 }" var="item2">
+							<c:if test="${item2.cateCodeRef == item1.cateCode }">
+								<li><a class="head" href="/shopping/product?name=${item2.cateCode }&orderBy=desc">${item2.cateName }</a></li>
+							</c:if>
+						</c:forEach>
+					</ul>
+				</c:forEach>
 			</ul>
-
 
 			<div class="header">
 				<div id="header_form">

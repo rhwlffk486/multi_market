@@ -65,6 +65,7 @@ var userAddress1 = false;
 		// 이메일 검사 정규식
 		var mailJ = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
 		
+		var test= 1;
 		
 		var user_name = false;
 		var idCheck = false;

@@ -38,7 +38,7 @@ $(function() {
 		$(".deliveryForm").submit();
 	}
 
-	 $(".MGR_table").on("click", ".product_delete", function() { //list안의 btnDel을 선택
+	 $(".MGR_table").on("click", ".product_delete", function() {
 			var con = confirm("정말로 삭제하시겠습니까?");
 			var n = $(this).val();
 			
@@ -99,7 +99,7 @@ $(function() {
 								<td class="MGR_info"><h5><fmt:formatNumber pattern="###,###,###" value="${myProduct.productPrice }"/>원</h5></td>
 								<td><a href="/shopping/myProductView?n=${myProduct.productNum }" class="product_modi"><span>수정</span></a>
 								<button type="button" value="${myProduct.productNum }" class="product_delete">삭제</button></td>
-							</tr>${thum }	
+							</tr>
 							</c:forEach>
 						</tbody>
 					</table>
@@ -232,28 +232,28 @@ $(function() {
 						<c:forEach items="${OrderComesList}" var="OrderComesList">
 						<c:set var="delivery" value="${OrderComesList.productInfo}"/>
 							<c:if test="${delivery eq '환불요청' or delivery eq '환불완료'}">
-									<li>
-										<div>
-											<div id="MGR_left">
-												<div>주문번호</div>
-												<div>날짜</div>
-												<div>수령인</div>
-												<div>주소</div>
-											</div>
-											<div id="MGR_right">
-												<div><a onclick="window.open('/shopping/delivery?orderID=${OrderComesList.orderID}&productInfo=${delivery }', '_blank', 
-					                     		'top=140, left=300, width=750, height=700, menubar=no, toolbar=no, location=no, directories=no, status=no, scrollbars=no, copyhistory=no, resizable=no');"
-												href="javascript:void(0);"> ${OrderComesList.orderID}</a></div>
-												<div><fmt:formatDate value="${OrderComesList.orderDate }" pattern="yyyy-MM-dd"/></div>
-												<div>${OrderComesList.orderATTN}</div>
-												<div id="MGR_num">우편번호 : (${OrderComesList.address1}) ${OrderComesList.address2}${OrderComesList.address3}</div>
-											</div>
-											
-											<div>
-													<div><h3 id="deli_id">${OrderComesList.productInfo}</h3></div>
-											</div>
+								<li>
+									<div>
+										<div id="MGR_left">
+											<div>주문번호</div>
+											<div>날짜</div>
+											<div>수령인</div>
+											<div>주소</div>
 										</div>
-									</li>
+										<div id="MGR_right">
+											<div><a onclick="window.open('/shopping/delivery?orderID=${OrderComesList.orderID}&productInfo=${delivery }', '_blank', 
+				                     		'top=140, left=300, width=750, height=700, menubar=no, toolbar=no, location=no, directories=no, status=no, scrollbars=no, copyhistory=no, resizable=no');"
+											href="javascript:void(0);"> ${OrderComesList.orderID}</a></div>
+											<div><fmt:formatDate value="${OrderComesList.orderDate }" pattern="yyyy-MM-dd"/></div>
+											<div>${OrderComesList.orderATTN}</div>
+											<div id="MGR_num">우편번호 : (${OrderComesList.address1}) ${OrderComesList.address2}${OrderComesList.address3}</div>
+										</div>
+										
+										<div>
+												<div><h3 id="deli_id">${OrderComesList.productInfo}</h3></div>
+										</div>
+									</div>
+								</li>
 							</c:if>
 						</c:forEach>
 						</ul>

@@ -10,20 +10,6 @@
 <title>shopping</title>
 </head>
 <script type="text/javascript">
-$(function(){
-	$("#product_used").on("click", function(){
-
-
-	});
-	console.log('${product}');
-	$("#product_company").on("click", function(){
-		$("#product_CP").css("display", "grid");
-		$("#product_US").css("display", "none");
-		$("#product_used").css("display", "inline-block");
-		$("#product_company").css("display", "none");
-	});
-	
-});
 </script>
 
 <body>
@@ -46,7 +32,7 @@ $(function(){
 							<a class="product" href="/shopping/productView?n=${product.productNum }" class="product_img">
 								<img alt="img" src="${product.productImg }">
 							<div class="product_content">
-								"${product.role }제품"<h4 class="product_h4">${product.productTitle }</h4>
+								<span>"${product.role }제품"</span><h4 class="product_h4">${product.productTitle }</h4>
 								<p class="product_p">
 									<strong class="product_st">${product.productPrice }</strong>원
 								</p>

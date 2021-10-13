@@ -72,7 +72,28 @@
 		    start with cate_code_ref is null connect by prior cate_code = cate_code_ref
 	</select>
 	
-	<!-- 選択した上位製品のリスト -->
+	<!-- カテゴリー -->
+	<select id="category1" resultType="category">
+		 select
+		 	  cate_name as "cateName"
+		 	, cate_code as "cateCode"
+		 from sp_category
+		 where
+		 	cate_code_ref is null
+	</select>
+	
+	<!-- カテゴリー -->
+	<select id="category2" resultType="category">
+		 select
+		 	  cate_name as "cateName"
+		 	, cate_code as "cateCode"
+		 	, cate_code_ref as "cateCodeRef"
+		 from sp_category
+	     where
+		 	cate_code_ref is not null
+	</select>
+	
+	<!-- 選択した上位商品のリスト -->
 	<select id="productPshow" parameterType="hashMap" resultType="product" resultMap="productResultMap">
 		select
 			  product_num
@@ -135,7 +156,7 @@
 			</choose>
 	</select>
 
-	<!-- 選択した下位製品のリスト -->
+	<!-- 選択した下位商品のリスト -->
 	<select id="productCshow" parameterType="hashMap" resultType="product" resultMap="productResultMap">
 		select
 			  product_num
@@ -198,7 +219,7 @@
 			</choose>
 	</select>
 	
-	<!-- 選択した上位製品の数 -->
+	<!-- 選択した上位商品の数 -->
 	<select id="productPcount" parameterType="string" resultType="int">
 		select
 			count(p.cate_code)
@@ -212,7 +233,7 @@
 			cate_code_ref = #{cateCodeRef}
 	</select>
 	
-	<!-- 選択した下位製品の数 -->
+	<!-- 選択した下位商品の数 -->
 	<select id="productCcount" parameterType="string" resultType="int">
 		select
 			count(cate_code)
@@ -313,7 +334,7 @@
 		</if>
 	</select>
 	
-	<!-- 商品の詳細情報　＆　修正する製品 -->
+	<!-- 商品の詳細情報　＆　修正する商品 -->
 	<select id="productView" parameterType="int" resultType="product" resultMap="productResultMap">
 			select
 		  p.product_num
@@ -448,7 +469,7 @@
 		order by product_date desc
 	</select>
 	
-	<!-- 注文された製品のリスト -->
+	<!-- 注文された商品のリスト -->
 	<select id="orderComesList" resultType="order" parameterType="string" resultMap="orderResultMap">
 		select 
 			  distinct o.order_ID
@@ -512,7 +533,7 @@
 		)
 	</insert>
 	
-	<!-- 製品修正 -->
+	<!-- 商品修正 -->
 	<update id="productModify">
 		update
 			sp_product
@@ -527,7 +548,7 @@
 			product_num = #{productNum} 
 	</update>
 	
-	<!-- 製品削除 -->
+	<!-- 商品削除 -->
 	<delete id="productDelete">
 		delete
 		from
@@ -555,7 +576,7 @@
 		where c.user_ID = #{userID}
 	</select>
 	
-	<!-- カートの製品削除 -->
+	<!-- カートの商品削除 -->
 	<delete id="deleteCart">
 		delete
 			sp_cart
@@ -606,7 +627,7 @@
 			user_ID = #{userID}
 	</insert>
 	
-	<!-- すべてのカートリストの製品削除 -->
+	<!-- すべてのカートリストの商品削除 -->
 	<delete id="cartAllDelete">
 		delete
 			sp_cart
@@ -614,7 +635,7 @@
 			user_ID = #{userID}
 	</delete>
 	
-	<!-- 注文した製品 -->
+	<!-- 注文した商品 -->
 	<select id="orderList" resultType="order" parameterType="string" resultMap="orderResultMap">
 		select
 			distinct o.order_ID
@@ -635,7 +656,7 @@
 			user_ID = #{userID}
 	</select>
 	
-	<!-- 返品した製品 -->
+	<!-- 返品した商品 -->
 	<select id="refundOrderList" resultType="order" parameterType="hashMap" resultMap="orderResultMap">
 		  select
 			distinct o.order_ID
@@ -657,7 +678,7 @@
 			user_ID = #{userID} and product_info = #{productInfo}
 	</select>
 	
-	<!-- 注文した製品の詳しい内容のリスト -->
+	<!-- 注文した商品の詳しい内容のリスト -->
 	<select id="orderView" parameterType="hashMap" resultType="order" resultMap="orderResultMap">
 		select
 		      o.order_ID
@@ -676,7 +697,7 @@
 		where o.order_ID = #{orderID} and d.product_info = #{productInfo}
 	</select>
 	
-	<!-- orderViewからチェックした製品の返品要請 -->
+	<!-- orderViewからチェックした商品の返品要請 -->
 	<update id="refundPlz" parameterType="hashMap">
 		update
 			sp_order_details
@@ -686,7 +707,7 @@
 			product_num = #{productNum} and order_ID = #{orderID}
 	</update>
 	
-	<!-- 販売者：明細書の配送の状態に合わせて製品を持ってくる -->
+	<!-- 販売者：明細書の配送の状態に合わせて商品を持ってくる -->
 	<select id="orderDelivery" resultType="order" parameterType="hashMap" resultMap="orderResultMap">
 		select
 			  d.product_num
@@ -733,7 +754,7 @@
 			order_ID = #{orderID} and product_ID = #{userID}
 	</update>
 	
-	<!-- 配送が完了すると注文が入った数分だけ製品から抜く -->
+	<!-- 配送が完了すると注文が入った数分だけ商品から抜く -->
 	<update id="productDown">
 		update
 			sp_product
@@ -743,7 +764,7 @@
 			product_num = #{productNum}
 	</update>
 	
-	<!-- 返品完了すると製品の数を返品された数分だけ増加 -->
+	<!-- 返品完了すると商品の数を返品された数分だけ増加 -->
 	<update id="refund" parameterType="hashMap">
 		update
 			sp_product
@@ -753,7 +774,7 @@
 			product_num = #{productNum}
 	</update>
 	
-	<!-- 当日入った一般製品をホームページに表示するメソッド -->
+	<!-- 当日入った一般商品をホームページに表示するメソッド -->
 	<select id="todayProduct" parameterType="string" resultType="product" resultMap="productResultMap">
 		   select
 		  product_num

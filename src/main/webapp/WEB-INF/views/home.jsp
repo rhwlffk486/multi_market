@@ -40,8 +40,8 @@
 <body>
 	<c:if test="${result eq 1}">
 		<script type="text/javascript">
-			location.href = "https://tae-hun.xyz/";
 			alert("아이디 혹은 비밀번호를 다시 확인해주세요.");
+			location.href = "http://localhost/";
 		</script>
 	</c:if>	
 	<header>

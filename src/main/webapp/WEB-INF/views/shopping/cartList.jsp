@@ -246,11 +246,8 @@ $(function(){
 			    alert(msg);
 			});
 		}
-		
-	
-		
 	});
-	});
+});
 </script>
 </head>
 <body>
@@ -281,13 +278,10 @@ $(function(){
 				<div id="product_img"><a class="product" href="/shopping/productView?n=${cartList.productNum }" class="product_img"><img src="${cartList.productImg }"></a></div>
 				<div id="product_info">
 					<p id="cart_p">
-						<span>상품명: </span>${cartList.productTitle }<br>
-						<span>가격: </span>
-							<fmt:formatNumber pattern="###,###,###" value="${cartList.productPrice }"/><br>
-						<span>수량: </span>
-							<fmt:formatNumber pattern="###,###,###" value="${cartList.productQty }"/><br>
-						<span>합계 금액: </span>
-							<fmt:formatNumber pattern="###,###,###" value="${cartList.productPrice * cartList.productQty }"/><br>
+						<span class="product_name">상품명: ${cartList.productTitle }</span>
+						<span>가격: <fmt:formatNumber pattern="###,###,###" value="${cartList.productPrice }"/></span>
+						<span>수량: <fmt:formatNumber pattern="###,###,###" value="${cartList.productQty }"/></span>
+						<span>합계 금액: <fmt:formatNumber pattern="###,###,###" value="${cartList.productPrice * cartList.productQty }"/></span>
 					</p>
 					<div id="cart_delete">
 						<button type="button" class="cart_delete_btn" data-cart_num="${cartList.cartNum }">삭제</button>

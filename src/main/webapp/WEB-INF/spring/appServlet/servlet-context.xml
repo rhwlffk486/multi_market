@@ -51,6 +51,7 @@
 			<beans:ref bean="loginInterceptor" />
 		</interceptor>
 	</interceptors>
+	
 	<!-- summernote 이미지 외부저장 매핑 -->
 	<resources mapping="/summernote_image/**"
 		location="file:///C:/summernote_image/" />
